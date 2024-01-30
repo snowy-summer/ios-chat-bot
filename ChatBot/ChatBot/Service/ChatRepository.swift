@@ -10,6 +10,9 @@ import Foundation
 final class ChatRepository {
     private let url: APIBaseURLProtocol
     private let networkManager: NetworkManager
+    private let CDMessageManager = CoreDataMessageManager()
+    private let CDChatRoomManager = CoreDataChatRoomManager()
+    
     private var chatRecord: [Message] = []
     
     weak var delegate: UpdateUIDelegate?
@@ -23,6 +26,7 @@ final class ChatRepository {
         for message in request.messages {
             chatRecord.append(message)
         }
+        
         return chatRecord
     }
 }

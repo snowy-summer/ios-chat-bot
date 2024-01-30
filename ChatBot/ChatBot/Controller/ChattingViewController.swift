@@ -12,7 +12,7 @@ import UIKit
 final class ChattingViewController: UIViewController {
     private var chatService: ServiceProvider!
     private var chatRoomView: ChatRoomView!
-    
+
     override func loadView() {
         super.loadView()
         chatService = ServiceProvider(delegate: self)

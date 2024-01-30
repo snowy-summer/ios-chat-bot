@@ -13,24 +13,24 @@ struct CoreDataChatRoomManager {
     init(coreDataManager: CoreDataManager = CoreDataManager.shared) {
         self.coreDataManager = coreDataManager
     }
-    
-    func saveContext() {
-        coreDataManager.saveContext()
-    }
-    
+
     func readChatRooms() throws -> [ChatRoom] {
         let context = coreDataManager.context
         let request = ChatRoom.fetchRequest()
         return try context.fetch(request)
     }
     
-    func writeChatRoom(title: String, date: Date) {
+    func writeChatRoom(model: ChatRoomModel) {
         let context = coreDataManager.context
         let entity = ChatRoom.entity()
-        var chatRoom = ChatRoom(entity: entity, insertInto: context)
+        let chatRoom = ChatRoom(entity: entity, insertInto: context)
         
-        chatRoom.title = title
-        chatRoom.date = date
-        chatRoom.id = UUID()
+        chatRoom.title = model.title
+        chatRoom.date = model.date
+        chatRoom.id = model.id
+    }
+    
+    func saveContext() {
+        coreDataManager.saveContext()
     }
 }
