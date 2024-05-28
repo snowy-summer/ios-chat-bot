@@ -13,6 +13,11 @@ OpenAI API를 사용해서 챗봇에게 질문을 하고 그에 대한 응답을
 
 <br/>
 
+## PR
+- [STEP1] https://github.com/tasty-code/ios-chat-bot/pull/6
+- [STEP2] https://github.com/tasty-code/ios-chat-bot/pull/11
+- [STEP3] https://github.com/tasty-code/ios-chat-bot/pull/26
+
 ## 구현 영상
 
 |기본 대화|스크롤|키보드 레이아웃|
